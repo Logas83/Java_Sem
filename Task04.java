@@ -16,6 +16,7 @@ public class Task04
         Scanner sc = new Scanner(System.in);
         System.out.printf("n: ");
         int n = sc.nextInt();
+        sc.close();
         int result = factorial(n);
         System.out.println(result);
     }
