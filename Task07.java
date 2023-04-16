@@ -26,18 +26,31 @@ public class Task07
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        System.out.printf("size array: ");
+        System.out.print("Сколько чисел будем вводить?: ");
         int size = sc.nextInt();
-        
-
-        int[] arr = new int[size];
-        int sum_nums = 0;
+              
+        int[] arr = new int[size];     
 
         for (int i = 0; i < size; i++)
         {
-            System.out.println("elem: ");
-            arr[i] = sc.nextInt();
-            
+            System.out.print("Введите число: ");
+            arr[i] = sc.nextInt();            
+        }
+
+        System.out.println();
+        unique_elements(arr);
+        sc.close();
+    }
+
+
+    static void unique_elements(int[] arr) {
+        System.out.print("Уникальные элементы: ");
+        for (int k : arr) {
+            int counter = 0;
+            for (int i : arr) {
+                if (k == i) counter++;
+            }
+            if (counter == 1) System.out.printf("%d ", k);
         }
     }
 }
